@@ -1,0 +1,10 @@
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\obj\Release\FactoryHelperManager.csproj.CoreCompileInputs.cache
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\FactoryHelperManager.xml
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\FactoryHelperManager.dll
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\FactoryHelperManager.pdb
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\Aspose.Cells.dll
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\LinqBridge.dll
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\obj\Release\FactoryHelperManager.csproj.CopyComplete
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\obj\Release\FactoryHelperManager.dll
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\obj\Release\FactoryHelperManager.pdb
+D:\祖飞项目\FactoryHelperManager\FactoryHelperManager\bin\Release\System.Data.SQLite.dll

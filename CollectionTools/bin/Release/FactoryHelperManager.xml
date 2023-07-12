@@ -1,0 +1,1621 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FactoryHelperManager</name>
+    </assembly>
+    <members>
+        <member name="P:FactoryHelperManager.AccessOleDbHelper.connectString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataPath">access数据库路径</param>
+            <param name="password">access数据库密码</param>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.GetAccessAllTableAndData(System.String@)">
+            <summary>
+            读取取Access中所有的表既数据
+            </summary>
+            <param name="error">错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.GetDataTable(System.String)">
+            <summary>
+            获取DataTable对象
+            </summary>
+            <param name="connSting">数据库连接字符串</param>
+            <param name="strSql">T-SQL语句,一般为以Select开头的查询语句</param>
+            <returns>DataTable对象或null</returns>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.ExcuteSQL(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            对Access数据库或Excel文件指定指定的SQL语句
+            </summary>
+            <param name="connString">数据库连接字符串</param>
+            <param name="strSql">T-SQL语句,一般为增删改语句</param>
+            <param name="paramArray">OleDbParameter类型可变长参数数组</param>
+            <returns>执行SQL语句所影响的行数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.AddUpdateOrDeleteList(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Data.OleDb.OleDbParameter[]})">
+            <summary>
+            批量执行添加、修改或删除操作。
+            </summary>
+            <param name="sqlList">要执行添加、修改或删除操作的SQL语句列表。</param>
+            <param name="parasList">要执行添加、修改或删除操作的SQL语句的对应参数列表。</param>
+            <returns>返回添加、修改或删除操作所执行成功的数据条数。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.AccessOleDbHelper.CheckedOleDbConnection(System.String,System.String)">
+            <summary>
+            检测access连接数据引擎版本
+            </summary>
+            <param name="accessFilePath"></param>
+            <param name="passWord"></param>
+        </member>
+        <member name="P:FactoryHelperManager.DbfOleDbHelper.connectString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.DbfOleDbHelper.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dataPath">access数据库路径</param>
+        </member>
+        <member name="M:FactoryHelperManager.DbfOleDbHelper.GetDBFAllTableAndData(System.String@)">
+            <summary>
+            读取取DBF中的表数据
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ProcessHelper.KillProcess(System.String)">
+            <summary>
+            结束进程
+            </summary>
+            <param name="processName">进程名称</param>
+        </member>
+        <member name="T:FactoryHelperManager.SerializableCtrl">
+            <summary>
+            序列化对象、反序列化对象类
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.SerializableCtrl.ExamSerialize``1(``0,System.String)">
+            <summary>
+            序列化对象到指定文件
+            </summary>
+            <param name="t">进行序列化的对象</param>
+            <param name="filePath">指定文件路径含文件名</param>
+        </member>
+        <member name="M:FactoryHelperManager.SerializableCtrl.ExamSerialize``1(``0)">
+            <summary>
+            序列化对象到字节数组
+            </summary>
+            <param name="t">进行序列化的对象</param>
+        </member>
+        <member name="M:FactoryHelperManager.SerializableCtrl.ExamDeserialize``1(System.String,System.Int32)">
+            <summary>
+            从指定文件反序列化对象
+            </summary>
+            <param name="filePath">指定的文件</param>
+            <param name="readCount">每次从流中读取的最大字节数</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SerializableCtrl.ExamDeserialize``1(System.Byte[])">
+            <summary>
+            从指定字节数组反序列化对象
+            </summary>
+            <param name="filePath">指定的字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SerializableCtrl.ReadAllBytesFromStream(System.IO.Stream,System.Byte[]@,System.Int32)">
+            <summary>
+            读取流里面的所有字节，并返回流的总长度。
+            </summary>
+            <param name="stream">流</param>
+            <param name="buffer">返回的字节数组</param>
+            <param name="readCount">每次从流中读取的最大字节数</param>
+            <param name="capacity">字节数组初始容量</param>
+            <param name="loadFactor">字节数组容量增长数</param>
+            <returns>流的总长度</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSql(System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSqlByTime(System.String,System.Int32)">
+            <summary>
+            执行SQL语句，设置命令的执行等待时间
+            </summary>
+            <param name="SQLString"></param>
+            <param name="Times"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSqlTran(System.Collections.ArrayList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>        
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSqlInsertImg(System.String,System.Byte[])">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteReader(System.String)">
+            <summary>
+            执行查询语句，返回SQLiteDataReader(使用该方法切记要手工关闭SQLiteDataReader和连接)
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SQLiteDataReader</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.Query(System.String,System.Int32)">
+            <summary>
+            执行查询语句，返回DataSet,设置命令的执行等待时间
+            </summary>
+            <param name="SQLString"></param>
+            <param name="Times"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSql(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteSqlTran(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SQLiteParameter[]）</param>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.GetSingle(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.ExecuteReader(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行查询语句，返回SQLiteDataReader (使用该方法切记要手工关闭SQLiteDataReader和连接)
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SQLiteDataReader</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.Query(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SQLiteHelper.MakeSQLiteParameter(System.String,System.Data.DbType,System.Int32,System.Object)">
+            <summary>
+            放回一个SQLiteParameter
+            </summary>
+            <param name="name">参数名字</param>
+            <param name="type">参数类型</param>
+            <param name="size">参数大小</param>
+            <param name="value">参数值</param>
+            <returns>SQLiteParameter的值</returns>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.ShowWindow(System.IntPtr,System.Int32)">
+            <summary>
+            设置指定窗口的显示状态。
+            </summary>
+            <param name="hWnd">指定的窗口句柄。</param>
+            <param name="nCmdShow">指定窗口如何显示。</param>
+            <returns>如果窗口当前可见,则返回值为非零。如果窗口当前被隐藏,则返回值为零。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.ShowWindow(System.IntPtr,FactoryHelperManager.WindowsHelper.SW)">
+            <summary>
+            设置指定窗口的显示状态。
+            </summary>
+            <param name="hWnd">指定的窗口句柄。</param>
+            <param name="nCmdShow">指定窗口如何显示。</param>
+            <returns>如果窗口当前可见,则返回值为非零。如果窗口当前被隐藏,则返回值为零。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.FindWindowEx(System.IntPtr,System.IntPtr,System.String,System.String)">
+            <summary>
+            在窗口列表中查找符合指定条件的第一个子窗口。该函数获得一个窗口的句柄,该窗口的类名和窗口名与给定的字符串相匹配。这个函数查找子窗口,从排在给定的子窗口后面的下一个子窗口开始。在查找时不区分大小写。
+            </summary>
+            <param name="hwndParent">要查找子窗口的父窗口句柄。如果hwndParent为NULL,则函数以桌面窗口为父窗口,查找桌面窗口的所有子窗口。</param>
+            <param name="hwndChildAfter">子窗口句柄。查找从在Z序中的下一个子窗口开始。子窗口必须为hwndParent窗口的直接子窗口而非后代窗口。如果HwndChildAfter为NULL,查找从hwndParent的第一个子窗口开始。如果hwndParent和 hwndChildAfter同时为NULL,则函数查找所有的顶层窗口及消息窗口。</param>
+            <param name="lpszClass">指向一个指定了类名的空结束字符串,或一个标识类名字符串的成员的指针。如果该参数为一个成员,他必须为前次调用theGlobaIAddAtom函数产生的全局成员。该成员为16位,必须位于lpClassName的低16位,高位必须为0。</param>
+            <param name="lpszWindow">指向一个指定了窗口名(窗口标题)的空结束字符串。如果该参数为NULL,则为所有窗口全匹配。</param>
+            <returns>找到的窗口的句柄。如未找到符合窗口,则返回零。会设置GetLastError。如果函数成功,返回值为具有指定类名和窗口名的窗口句柄。如果函数失败,返回值为NULL。若想获得更多错误信息,请调用GetLastError函数。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            将创建指定窗口的线程设置到前台,并且激活该窗口。键盘输入转向该窗口,并为用户改各种可视的记号。系统给创建前台窗口的线程分配的权限稍高于其他线程。
+            </summary>
+            <param name="hwnd">将要设置前台的窗口句柄。</param>
+            <returns>如果窗口设入了前台,返回值为非零;如果窗口未被设入前台,返回值为零。</returns>
+        </member>
+        <member name="T:FactoryHelperManager.WindowsHelper.SW">
+            <summary>
+            定义ShowWindow函数的nCmdShow参数常量,指定窗口如何显示。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.HIDE">
+            <summary>
+            隐藏窗口并激活其他窗口。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.MAXIMIZE">
+            <summary>
+            最大化指定的窗口。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.MINIMIZE">
+            <summary>
+            最小化指定的窗口并且激活在Z序中的下一个顶层窗口。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.RESTORE">
+            <summary>
+            激活并显示窗口。如果窗口最小化或最大化,则系统将窗口恢复到原来的尺寸和位置。在恢复最小化窗口时,应该指定这个标志。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOW">
+            <summary>
+            在窗口原来的位置以原来的尺寸激活和显示窗口。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWDEFAULT">
+            <summary>
+            依据在STARTUPINFO结构中指定的SW_FLAG标志设定显示状态,STARTUPINFO 结构是由启动应用程序的程序传递给CreateProcess函数的。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWMAXIMIZED">
+            <summary>
+            激活窗口并将其最大化。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWMINIMIZED">
+            <summary>
+            激活窗口并将其最小化。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWMINNOACTIVE">
+            <summary>
+            窗口最小化,激活窗口仍然维持激活状态。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWNA">
+            <summary>
+            以窗口原来的状态显示窗口,激活窗口仍然维持激活状态。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWNOACTIVATE">
+            <summary>
+            以窗口最近一次的大小和状态显示窗口,激活窗口仍然维持激活状态。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.WindowsHelper.SW.SHOWNORMAL">
+            <summary>
+            激活并显示一个窗口。如果窗口被最小化或最大化,系统将其恢复到原来的尺寸和大小。应用程序在第一次显示窗口的时候应该指定此标志。
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.SetWindForeGroundByProccessName(System.String)">
+            <summary>
+            启动程序或将已启动的程序展示到最前方
+            </summary>
+            <param name="setProcessName">进程名称</param>
+        </member>
+        <member name="M:FactoryHelperManager.WindowsHelper.SetWindForeGroundByWindowTitle(System.String)">
+            <summary>
+            启动程序或将已启动的程序展示到最前方
+            </summary>
+            <param name="lpszWindow">启动程序的标题名称</param>
+        </member>
+        <member name="T:FactoryHelperManager.WindowsHelper.DateTimeComparer">
+            <summary>
+            时间比较器
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.NumberToChinese(System.String)">
+            <summary>
+            转换万以下整数
+            </summary>
+            <param name="x">数字</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.NoToChinese(System.String)">
+            <summary>
+            转换整数
+            </summary>
+            <param name="x">数字</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.DecimalNumberToChinese(System.String)">
+            <summary>
+            数字（int或decimal）转成中文
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.IntNumToChinese(System.String)">
+            <summary>
+            数字（只能为整型）转成中文
+            </summary>
+            <param name="x"></param>
+            <returns>报错或错误返回空</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.GetChinaMoney(System.Decimal)">
+            <summary>
+            数字钱转成大写钱
+            </summary>
+            <param name="money"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.ConverToDigit(System.String)">
+            <summary>  
+            将中文数字转换成阿拉伯数字  
+            </summary>  
+            <param name="cnNumber"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.ToDigit(System.Char)">
+            <summary>  
+            将中文数字转换成阿拉伯数字  
+            </summary> 
+            <param name="cn"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:FactoryHelperManager.ChineseNumberAndArabicNumberconvert.ChineseToIntNumber(System.String)">
+            <summary>  
+            将中文数字转换成阿拉伯数字  
+            </summary>  
+            <param name="cnDigit"></param>  
+            <returns></returns>  
+        </member>
+        <member name="T:FactoryHelperManager.ChineseToSpell">
+            <summary>
+            汉字转拼音静态类,包括功能全拼和缩写，方法全部是静态的
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.ChineseToSpell.pyValue">
+            <summary>
+            汉字的机内码数组
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.ChineseToSpell.pyName">
+            <summary>
+            机内码对应的拼音数组
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.Convert(System.String)">
+            <summary>
+            把汉字转换成拼音(全拼)
+            </summary>
+            <param name="hzString">汉字字符串</param>
+            <returns>转换后的拼音(全拼)字符串</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.ConvertWithBlank(System.String)">
+            <summary>
+            把汉字转换成拼音(全拼)
+            </summary>
+            <param name="hzString">汉字字符串</param>
+            <returns>转换后的拼音(全拼)字符串</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.ConvertWithSplitChar(System.String,System.String)">
+            <summary>
+            把汉字转换成拼音(全拼)
+            </summary>
+            <param name="hzString">汉字字符串</param>
+            <returns>转换后的拼音(全拼)字符串</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellStringLower(System.String)">
+            <summary>
+            汉字转拼音缩写
+            </summary>
+            <param name="str">要转换的汉字字符串</param>
+            <returns>拼音缩写</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellStringLowerSplitWithBlank(System.String)">
+            <summary>
+            汉字转拼音缩写 (字符串) (小写) (空格间隔)
+            </summary>
+            <param name="str">要转换的汉字字符串</param>
+            <returns>拼音缩写</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellStringSupper(System.String)">
+            <summary>
+            汉字转拼音缩写 (大写)
+            </summary>
+            <param name="str">要转换的汉字字符串</param>
+            <returns>拼音缩写</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellStringSupperSplitWithBlank(System.String)">
+            <summary>
+            汉字转拼音缩写  (字符串)(大写)(空格间隔)
+            </summary>
+            <param name="str">要转换的汉字字符串</param>
+            <returns>拼音缩写</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellCharSupper(System.String)">
+            <summary>
+            取单个字符的拼音声母
+            </summary>
+            <param name="c">要转换的单个汉字</param>
+            <returns>拼音声母</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ChineseToSpell.GetSpellCharLower(System.String)">
+            <summary>
+            取单个字符的拼音声母
+            </summary>
+            <param name="c">要转换的单个汉字</param>
+            <returns>拼音声母</returns>
+        </member>
+        <member name="M:FactoryHelperManager.CloneClassManager.Clone``1(System.Object)">
+            <summary>
+            深复制
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.CloneClassManager.DeepCopy``1(``0)">
+            <summary>
+            深复制
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="F:FactoryHelperManager.Const.passWord">
+            <summary>
+            access数据库密码
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.dataPath">
+            <summary>
+            access数据库路径
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.DataAccessConnectStringFormat">
+            <summary>
+            加密access数据库连接字符串
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.dbfDataPath">
+            <summary>
+            dbf数据路径
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.DataDBFConnectionStringFormat">
+            <summary>
+            dbf数据连接字符串
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.DefaultEncoding">
+            <summary>
+            本系统采用的编码。
+            </summary>
+        </member>
+        <member name="P:FactoryHelperManager.Const.Guid">
+            <summary>
+            随机码。
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.Const.ToDBC(System.String)">
+             <summary> 
+             转半角的函数(DBC case) 
+             </summary>
+             <param name="input">任意字符串</param>
+             <returns>半角字符串</returns>
+            <remarks>
+            全角空格为12288，半角空格为32
+            其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
+            </remarks>
+        </member>
+        <member name="M:FactoryHelperManager.Const.DirectoryCreate(System.String)">
+            <summary>
+            创建文件夹时删除同名文件。
+            </summary>
+            <param name="dirPath"></param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.DirectoryCopy(System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            将答案文件夹中的图层中考试要比对的图片拷到题目目录下(且和data后缀文件相同的图层id）
+            </summary>
+            <param name="sourceDirectoryPath">原目标</param>
+            <param name="desDirectoryPath">复制后目标</param>
+            <param name="overwrite">是否覆盖</param>
+            <param name="extends">要复制的后缀数组，为null时复制所有</param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.DirectoryCopy(System.String,System.String,System.Boolean,System.String[],System.String[],System.Boolean)">
+            <summary>
+            复制文件夹里的文件到另一个文件夹（通过后缀）
+            </summary>
+            <param name="sourceDirectoryPath">原目标</param>
+            <param name="desDirectoryPath">复制后目标</param>
+            <param name="overwrite">是否覆盖</param>
+            <param name="extends">要复制的后缀数组，为null时复制所有</param>
+            <param name="starts">要复制的文件开始名称，为null时复制所有</param>
+            <param name="includeChild">是否包含子文件夹</param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.DirectoryDelete(System.String)">
+            <summary>
+            删除文件夹
+            </summary>
+            <param name="sourceDirectoryPath">原目标</param>
+            <param name="desDirectoryPath">复制后目标</param>
+            <param name="overwrite">是否覆盖</param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.FileDeleteByFileName(System.String,System.String,System.Boolean)">
+            <summary>
+            删除文件夹中的所有以“XX”名称开头的文件（包括子文件夹）
+            </summary>
+            <param name="sourceDirectoryPath">文件夹路径</param>
+            <param name="fileName">文件名称，为空时，不匹配文件名称</param>
+            <param name="includeChild">是否包含子文件夹</param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.FileDelete(System.String)">
+            <summary>
+            删除指定路径下的文件
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.FileDeleteExtension(System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            删除文件夹中的所有以extension名称结尾的文件（除去名称为“FileName”，包括子文件夹）
+            </summary>
+            <param name="sourceDirectoryPath">文件夹路径</param>
+            <param name="extensions">后缀名</param>
+            <param name="fileName">不能删除的文件名称，为空时，删除所有</param>
+            <param name="includeChild">是否包含子文件夹</param>
+        </member>
+        <member name="T:FactoryHelperManager.Const.TextType">
+            <summary>
+            文本框的文本类型,为 SetTextBoxTextType 方法提供参数。
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.All">
+            <summary>
+            所有字符(包括汉字)
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.Integer">
+            <summary>
+            整数,0~9的数字
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.Decimal">
+            <summary>
+            小数,0~9的数字和小数点
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.NegativeNumber">
+            <summary>
+            负数,0~9的数字,"-"和小数点
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.Letter">
+            <summary>
+            A~Z,a~z的所有字母
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.NumberAndLetter">
+            <summary>
+            数字和字母
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.Char">
+            <summary>
+            所有的ASCII在0~127字符
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.Const.TextType.Other">
+            <summary>
+            除数字和字母外的所有字符
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.Const.SetTextBoxTextType(System.Windows.Forms.KeyPressEventArgs,FactoryHelperManager.Const.TextType)">
+            <summary>
+            设置文本框的文本类型,请在文本框的KeyPress事件中调用此方法。
+            </summary>
+            <param name="e">文本框的 KeyPress 事件的 KeyPressEventArgs 参数。</param>
+            <param name="textMode">文本框的文本类型,为 ControlUtil.TextTyp e值之一,此参数决定文本框中可输入的文本类型。</param>
+        </member>
+        <member name="M:FactoryHelperManager.Const.SafeInvoke(System.Windows.Forms.Control,System.EventHandler)">
+            <summary>
+            根据是否必须调用 Control.Invoke 方法执行指定委托。
+            </summary>
+            <param name="control"></param>
+            <param name="action"></param>
+        </member>
+        <member name="T:FactoryHelperManager.DataTableToEntity`1">
+            <summary>
+            DataTable转实体类集合
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.FillModel(System.Data.DataTable)">
+            <summary>
+            table转实体集合
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.FillDataTable(System.Collections.Generic.List{`0})">
+            <summary>
+            实体类集合转table
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.CreatTable(`0)">
+            <summary>
+            根据实体创建table
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataTable,System.Boolean,System.Int32,System.String,System.Boolean)">
+            <summary>
+            将DataTable的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataTable的列集合的类型。</typeparam>
+            <param name="dt">要获取列集合的DataTable。</param>
+            <param name="useIndexOrName">指定是使用 columnIndex 参数,还是使用 columnName 参数。</param>
+            <param name="columnIndex">要获取列集合的DataTable的从0开始的列索引。</param>
+            <param name="columnName">要获取列集合的DataTable的列名。</param>
+            <param name="removeRepetitive">指示是否移除重复的列数据。</param>
+            <returns>DataTable的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataTable,System.Int32)">
+            <summary>
+            将DataTable的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataTable的列集合的类型。</typeparam>
+            <param name="dt">要获取列集合的DataTable。</param>
+            <param name="columnIndex">要获取列集合的DataTable的从0开始的列索引。</param>
+            <returns>DataTable的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataTable,System.String)">
+            <summary>
+            将DataTable的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataTable的列集合的类型。</typeparam>
+            <param name="dt">要获取列集合的DataTable。</param>
+            <param name="columnName">要获取列集合的DataTable的列名。</param>
+            <returns>DataTable的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataSet,System.Int32)">
+            <summary>
+            将DataSet中第一张表的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataSet第一张表的列集合的类型。</typeparam>
+            <param name="ds">要获取列集合的DataSet,该DataSet必须至少包含一张表。</param>
+            <param name="columnIndex">要获取的DataSet第一张表的从0开始的列索引。</param>
+            <returns>DataSet第一张表的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataSet,System.String)">
+            <summary>
+            将DataSet中第一张表的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataSet第一张表的列集合的类型。</typeparam>
+            <param name="ds">要获取列集合的DataSet,该DataSet必须至少包含一张表。</param>
+            <param name="columnName">要获取的DataSet第一张表的DataTable的列名。</param>
+            <returns>DataSet第一张表的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataTable,System.Int32,System.Boolean)">
+            <summary>
+            将DataTable的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataTable的列集合的类型。</typeparam>
+            <param name="dt">要获取列集合的DataTable。</param>
+            <param name="columnIndex">要获取列集合的DataTable的从0开始的列索引。</param>
+            <param name="removeRepetitive">指示是否移除重复的列数据。</param>
+            <returns>DataTable的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            将DataTable的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataTable的列集合的类型。</typeparam>
+            <param name="dt">要获取列集合的DataTable。</param>
+            <param name="columnName">要获取列集合的DataTable的列名。</param>
+            <param name="removeRepetitive">指示是否移除重复的列数据。</param>
+            <returns>DataTable的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataSet,System.Int32,System.Boolean)">
+            <summary>
+            将DataSet中第一张表的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataSet第一张表的列集合的类型。</typeparam>
+            <param name="ds">要获取列集合的DataSet,该DataSet必须至少包含一张表。</param>
+            <param name="columnIndex">要获取的DataSet第一张表的从0开始的列索引。</param>
+            <param name="removeRepetitive">指示是否移除重复的列数据。</param>
+            <returns>DataSet第一张表的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.DataTableToEntity`1.GetDataTableColumnListOf``1(System.Data.DataSet,System.String,System.Boolean)">
+            <summary>
+            将DataSet中第一张表的指定列的数据,转换为&lt;T&gt;类型的集合。
+            </summary>
+            <typeparam name="T">要获取的DataSet第一张表的列集合的类型。</typeparam>
+            <param name="ds">要获取列集合的DataSet,该DataSet必须至少包含一张表。</param>
+            <param name="columnName">要获取的DataSet第一张表的DataTable的列名。</param>
+            <param name="removeRepetitive">指示是否移除重复的列数据。</param>
+            <returns>DataSet第一张表的&lt;T&gt;类型的列集合,若不存在数据,则返回null。</returns>
+        </member>
+        <member name="F:FactoryHelperManager.ExcelDataHelper.AllLetters">
+            <summary>
+            所有英文字母的字符串,此字段是常数。
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@,System.String@,System.Boolean,System.Int32[],System.Boolean)">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <param name="errorMessage">返回读取Excel文件时的错误信息。若未出错,则返回 string.Empty。</param>
+            <param name="checkPKColumn">指示是否检测主键列(主键列的信息不能重复)。</param>
+            <param name="pkColumnsIndex">若检测主键列(checkPKColumn为true),此数组包含主键列的列索引(从0开始)集合,若为null,将仅检测第0列。</param>
+            <param name="allowEmptyPKColumnData">若检测主键列(checkPKColumn为true),此值指示是否允许空的主键列数据。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false,错误信息将通过errorMessage返回。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@,System.String@,System.Boolean,System.Int32[])">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <param name="errorMessage">返回读取Excel文件时的错误信息。若未出错,则返回 string.Empty。</param>
+            <param name="checkPKColumn">指示是否检测主键列(主键列的信息不能重复)。</param>
+            <param name="pkColumnsIndex">若检测主键列(checkPKColumn为true),此数组包含主键列的列索引(从0开始)集合,若为null,将仅检测第0列。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false,错误信息将通过errorMessage返回。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@,System.Boolean,System.Int32[])">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <param name="checkPKColumn">指示是否检测主键列(主键列的信息不能重复)。</param>
+            <param name="pkColumnsIndex">若检测主键列(checkPKColumn为true),此数组包含主键列的列索引(从0开始)集合,若为null,将仅检测第0列。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@,System.Boolean,System.Int32[],System.Boolean)">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <param name="checkPKColumn">指示是否检测主键列(主键列的信息不能重复)。</param>
+            <param name="pkColumnsIndex">若检测主键列(checkPKColumn为true),此数组包含主键列的列索引(从0开始)集合,若为null,将仅检测第0列。</param>
+            <param name="allowEmptyPKColumnData">若检测主键列(checkPKColumn为true),此值指示是否允许空的主键列数据。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@,System.String@)">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <param name="errorMessage">返回读取Excel文件时的错误信息。若未出错,则返回 string.Empty。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false,错误信息将通过errorMessage返回。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDataTable(System.String,System.String,System.Int32,System.Int32,System.Data.DataTable@)">
+            <summary>
+            将指定Excel文件中的数据,读取到 DataTable 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="sheetName">Excel的Sheet表名称，为空时默认为第一个Sheet</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="dt">用于存储Excel文件数据的 DataTable,可以为null。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.ReadExcelToDictionary(System.String,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.String,System.Data.DataTable}@,System.String@)">
+            <summary>
+            将指定Excel文件中的数据,读取到 字典 中。
+            </summary>
+            <param name="excelFileName">要读取的Excel文件的全路径文件名。</param>
+            <param name="columnHeadStartRowIndex">Excel文件的列名起始行索引(从0开始),列名可以是合并的单元格,这将是 DataTable 的列名。</param>
+            <param name="dataStartRowIndex">Excel文件的数据起始行索引(从0开始)。</param>
+            <param name="disDic">用于存储Excel文件每个sheet数据的 Dictionary,可以为null。</param>
+            <param name="errorMessage">返回读取Excel文件时的错误信息。若未出错,则返回 string.Empty。</param>
+            <param name="checkPKColumn">指示是否检测主键列(主键列的信息不能重复)。</param>
+            <param name="pkColumnsIndex">若检测主键列(checkPKColumn为true),此数组包含主键列的列索引(从0开始)集合,若为null,将仅检测第0列。</param>
+            <param name="allowEmptyPKColumnData">若检测主键列(checkPKColumn为true),此值指示是否允许空的主键列数据。</param>
+            <returns>读取Excel文件中的数据成功,返回true,否则,返回false,错误信息将通过errorMessage返回。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.GetExcelCellName(System.Int32,System.Int32)">
+            <summary>
+            获取指定行列的Excel单元格的名称(如第0行,第1列则为B1单元格)。
+            </summary>
+            <param name="rowIndex">单元格在Excel中的从0开始的行索引。</param>
+            <param name="colIndex">单元格在Excel中的从0开始的列索引。</param>
+            <returns>该单元格的单元格名称(如第0行,第1列则为B1单元格)。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.SaveDataTablesExcel(System.Collections.Generic.Dictionary{System.String,System.Data.DataTable},System.String,System.String@)">
+            <summary>
+            保存DataTable集合数据
+            </summary>
+            <param name="dicDataTable"></param>
+            <param name="filePath"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Collections.Generic.Dictionary{System.Data.DataTable,System.String},System.String,System.Double,System.Double,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、表头行行高、数据行行高、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Double,System.Double,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、表头行行高、数据行行高、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Double,System.Double,System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的表头行行高及数据行行高。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Double,System.Double,System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、表头行行高及数据行行高。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.String},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的列名。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Double,System.Double,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double},System.String@)">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的表头行行高、数据行行高、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <param name="errorMessage">导出成功,返回string.Empty,若导出失败,则返回指定的错误信息。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Collections.Generic.Dictionary{System.Data.DataTable,System.String},System.String,System.String@)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Double,System.Double)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的表头行行高及数据行行高。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Double,System.Double)">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、表头行行高及数据行行高。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的列名。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            将指定DataTable中的所有行的数据,导入到指定的Excel文件中,并可以设置Excel的列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.Double,System.Double,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的表头行行高、数据行行高、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ExcelDataHelper.OutputDataTableToExcel(System.Data.DataTable,System.String,System.String,System.Double,System.Double,System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            将指定DataTable中的所有行的指定列的数据,导入到指定的Excel文件中,并可以设置Excel的工作表名称、表头行行高、数据行行高、列名及列宽。
+            </summary>
+            <param name="dt">要导出数据到Excel文件中的DataTable控件。</param>
+            <param name="excelFileName">要导出DataTable数据的Excel全文件名。</param>
+            <param name="sheetName">Excel的工作表名称,若为null或string.Empty,则为默认的sheet1。</param>
+            <param name="headRowHeight">Excel的表头行行高,若小于等于0,则为默认的18。</param>
+            <param name="dataRowHeight">Excel的数据行行高,若小于等于0,则为默认的12.75。</param>
+            <param name="ignoreDataTableColumnIndexList">忽略的DataTable的从0开始的列索引集合,这将指定DataTable中,哪些列将被忽略,不被导入到Excel中,若为null,则默认导出DataTable的所有列。</param>
+            <param name="columnNameList">导出到Excel中的列名集合,这将指定Excel中的表头行的列名,若为null,则所有列的列名默认为DataTable的列名,若无需设置某列列名,则可在列名集合中,指定对应的列名为string.Empty,则该列的列名默认为DataTable的对应列列名。</param>
+            <param name="columnWidthList">导出到Excel中的各列列宽集合,这将指定Excel中的表头行的列宽,若为null,则所有列的列宽默认为20,若无需设置某列列宽,则可在列宽集合中,指定对应的列宽为一个小于等于0的值(如-1),则该列的列宽默认为20。</param>
+            <returns>导出成功,返回true,否则,返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">DataTable不能为 null！</exception>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.ReadImageFromFile(System.String)">
+            <summary>
+            从指定的文件读取图像。
+            </summary>
+            <param name="fileName">要读取图像的文件名（全路径名称）。</param>
+            <returns>图像位图。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.CloneImage(System.Drawing.Bitmap)">
+            <summary>
+            克隆指定的图片。
+            </summary>
+            <param name="srcImage">要进行克隆的源图片。</param>
+            <returns>克隆后的图片。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.CloneImage(System.Drawing.Imaging.BitmapData)">
+            <summary>
+            克隆指定的图片。
+            </summary>
+            <param name="srcBitmapData">要进行克隆的源图片的 BitmapData。</param>
+            <returns>克隆后的图片。</returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.KiResizeImage(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            压缩图片
+            </summary>
+            <param name="photoFileName">图片名称（图片全路径名称）</param>
+            <param name="newW">压缩后宽度</param>
+            <param name="newH">压缩后高度</param>
+            <param name="Mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.KiResizeImage(System.Byte[],System.Int32,System.Int32,System.Int32)">
+            <summary>
+            压缩图片
+            </summary>
+            <param name="photoFileName">图片字节数组</param>
+            <param name="newW">压缩后宽度</param>
+            <param name="newH">压缩后高度</param>
+            <param name="Mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.SaveImage(System.Byte[],System.String)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="imageBytes">图片字节数</param>
+            <param name="saveFileName">图片保存名称，全路径名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.SaveImage(System.Byte[],System.String,System.String,FactoryHelperManager.ImageHelper.ImageExtensionFormat)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="imageBytes">图片字节数</param>
+            <param name="saveDirectoryName">保存的文件夹名称</param>
+            <param name="saveFileName">文件名</param>
+            <param name="imageFormat">保存的图片格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.SaveAsImage(System.String,System.String)">
+            <summary>
+            另存为图片
+            </summary>
+            <param name="imageBytes">图片名称，全路径名称</param>
+            <param name="saveFileName">图片另存为名称，全路径名称</param>
+            <returns></returns>
+        </member>
+        <member name="F:FactoryHelperManager.ImageHelper.ImageExtensionFormat.jpg">
+            <summary>
+            jpg格式
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.ImageHelper.ImageExtensionFormat.png">
+            <summary>
+            png格式
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.ImageHelper.ImageExtensionFormat.jpeg">
+            <summary>
+            jpeg格式
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.ImageHelper.ImageExtensionFormat.bmp">
+            <summary>
+            bmp格式
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.GetHash(System.Drawing.Image)">
+            <summary>
+            获取图片的D-hash值
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.GetBitmapSimilarity(System.UInt64,System.UInt64)">
+            <summary>
+            计算两个hash值之间的汉明距离(即相似度)
+            </summary>
+            <param name="hash1"></param>
+            <param name="hash2"></param>
+            <returns></returns>
+        </member>
+        <member name="F:FactoryHelperManager.ImageHelper.bitCounts">
+            <summary>
+            Bitcounts array used for BitCount method (used in Similarity comparisons).
+            Don't try to read this or understand it, I certainly don't. Credit goes to
+            David Oftedal of the University of Oslo, Norway for this. 
+            http://folk.uio.no/davidjo/computing.php
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.BitCount(System.UInt64)">
+            <summary>
+            计算ulong中位值为1的个数
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.Resize(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            修改图片尺寸
+            </summary>
+            <param name="originalImage"></param>
+            <param name="newWidth"></param>
+            <param name="newHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ImageHelper.GetGrayScaleVersion(System.Drawing.Image)">
+            <summary>
+            获取灰度图片
+            </summary>
+            <param name="original"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FactoryHelperManager.IniParse">
+            <summary>
+            读取和写文件中节点的键值对
+            </summary>
+        </member>
+        <member name="F:FactoryHelperManager.IniParse.tempPath">
+            <summary>
+            C:\Users\Administrator\AppData\Local\Temp
+            </summary>
+        </member>
+        <member name="P:FactoryHelperManager.IniParse.sPath">
+            <summary>
+            config默认路径
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.IniParse.WriteValue(System.String,System.String,System.String,System.String)">
+            <summary>
+            将键值对写入对应的节点里
+            </summary>
+            <param name="section">节点名称</param>
+            <param name="key">键名称</param>
+            <param name="value">值</param>
+            <param name="filePath">配置文件名称（全路径名称）</param>
+        </member>
+        <member name="M:FactoryHelperManager.IniParse.ReadValue(System.String,System.String,System.String)">
+            <summary>
+            读取对应节点中对应键的值
+            </summary>
+            <param name="section"></param>
+            <param name="key"></param>
+            <param name="filePath">配置文件名称（全路径名称）</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSql(System.String)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSqlTran(System.Collections.Generic.List{System.String})">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>        
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSqlInsertImg(System.String,System.Byte[])">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteReader(System.String)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.Query(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <param name="setTimeout">是否使用超时设定的数据库连接。</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSqlTran(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteSqlTranWithIndentity(System.Collections.Hashtable)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.AddUpdateOrDeleteList(System.Collections.Generic.IList{System.String},System.Collections.Generic.IList{System.Data.SqlClient.SqlParameter[]})">
+            <summary>
+            批量执行添加修改、修改或删除操作
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.RunProcedure(System.String,System.Data.IDataParameter[])">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@)">
+            <summary>
+            执行存储过程，返回影响的行数        
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)    
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="M:FactoryHelperManager.SqlHelper.RestoreDataBase(System.String,System.String,System.String@,System.Boolean)">
+            <summary>
+            恢复数据库，可选择是否可以强制还原（即在其他人在用的时候，依然可以还原）
+            </summary>
+            <param name="databasename">待还原的数据库名称</param>
+            <param name="databasefile">带还原的备份文件的完全路径</param>
+            <param name="errormessage">恢复数据库失败的信息</param>
+            <param name="forceRestore">是否强制还原（恢复），如果为TRUE，则exec killspid '数据库名' 结束此数据库的进程，这样才能还原数据库</param>
+            <returns></returns>
+        </member>
+        <member name="T:FactoryHelperManager.TableToModelByAttributeName">
+            <summary>
+            使用类的属性名对应DataTable中的字段名 
+            </summary>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeName.ToModel``1(System.Data.DataRow)">
+            <summary>
+            DataRow扩展方法：将DataRow类型转化为指定类型的实体
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeName.ToModel``1(System.Data.DataRow,System.Boolean)">
+            <summary>
+            将DataRow类型转化为指定类型的实体
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeName.ToList``1(System.Data.DataTable)">
+            <summary>
+            将DataTable类型转化为指定类型的实体集合
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeName.ToList``1(System.Data.DataTable,System.Boolean)">
+             <summary>
+            将DataTable类型转化为指定类型的实体集合
+             </summary>
+             <typeparam name="T">实体类型</typeparam>
+             <param name="dateTimeToString">是否需要将日期转换为字符串，默认为转换,值为true</param>
+             <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeDescription.ToModel``1(System.Data.DataRow)">
+            <summary>
+            DataRow扩展方法：将DataRow类型转化为指定类型的实体
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeDescription.ToModel``1(System.Data.DataRow,System.Boolean)">
+            <summary>
+            将DataRow类型转化为指定类型的实体
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeDescription.ToList``1(System.Data.DataTable)">
+            <summary>
+            将DataTable类型转化为指定类型的实体集合
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.TableToModelByAttributeDescription.ToList``1(System.Data.DataTable,System.Boolean)">
+             <summary>
+            将DataTable类型转化为指定类型的实体集合
+             </summary>
+             <typeparam name="T">实体类型</typeparam>
+             <param name="dateTimeToString">是否需要将日期转换为字符串，默认为转换,值为true</param>
+             <returns></returns>
+        </member>
+        <member name="M:FactoryHelperManager.ThreadHelper.QueueWork(FactoryHelperManager.VoidFunc)">
+            <summary>
+            把work放入线程池。错误记录日志并抛出。
+            </summary>
+            <param name="work"></param>
+        </member>
+        <member name="M:FactoryHelperManager.XMLHelper.GetChildNodes(System.Xml.XmlNode,System.String,System.Collections.Generic.List{System.Xml.XmlNode}@)">
+            <summary>
+            根据节点名称查找所有节点
+            </summary>
+            <param name="node"></param>
+            <param name="nodeName"></param>
+            <param name="findNodes"></param>
+        </member>
+        <member name="M:FactoryHelperManager.XMLHelper.GetSingleChildNodes(System.Xml.XmlNode,System.String)">
+            <summary>
+            根据节点名称查找唯一节点
+            </summary>
+            <param name="node"></param>
+            <param name="nodeName"></param>
+        </member>
+    </members>
+</doc>

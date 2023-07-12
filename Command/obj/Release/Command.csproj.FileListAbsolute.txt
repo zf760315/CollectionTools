@@ -1,0 +1,15 @@
+D:\华兴项目\CollectionTools\Command\bin\Release\Command.dll
+D:\华兴项目\CollectionTools\Command\bin\Release\Command.pdb
+D:\华兴项目\CollectionTools\Command\bin\Release\Microsoft.Expression.Interactions.dll
+D:\华兴项目\CollectionTools\Command\bin\Release\Microsoft.Xaml.Behaviors.dll
+D:\华兴项目\CollectionTools\Command\bin\Release\System.Windows.Interactivity.dll
+D:\华兴项目\CollectionTools\Command\bin\Release\Microsoft.Expression.Interactions.xml
+D:\华兴项目\CollectionTools\Command\bin\Release\Microsoft.Xaml.Behaviors.pdb
+D:\华兴项目\CollectionTools\Command\bin\Release\Microsoft.Xaml.Behaviors.xml
+D:\华兴项目\CollectionTools\Command\bin\Release\System.Windows.Interactivity.xml
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.Properties.Resources.resources
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.csproj.GenerateResource.cache
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.csproj.CoreCompileInputs.cache
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.csproj.CopyComplete
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.dll
+D:\华兴项目\CollectionTools\Command\obj\Release\Command.pdb
