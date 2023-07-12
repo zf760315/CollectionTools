@@ -35,16 +35,16 @@
                     <i:EventTrigger EventName="MouseDown">
                         <cmd:EventToCommand Command="{Binding MouseDownCommand}">
                              <!--传递多个参数测试使用-->  
-                            <cmd:EventToCommand.CommandParameter>
+                            <!--<cmd:EventToCommand.CommandParameter>
                                 <MultiBinding Converter="{StaticResource ParameterConvert}">
                                     <Binding ElementName="canvas" Path="Background"/>
                                     <Binding ElementName="img"/>
                                 </MultiBinding>
-                            </cmd:EventToCommand.CommandParameter>
+                            </cmd:EventToCommand.CommandParameter>-->
                         </cmd:EventToCommand>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseMove">
-                        <cmd:EventToCommand Command="{Binding PreviewMouseMoveCommand}"/>
+                        <cmd:EventToCommand Command="{Binding PreviewMouseMoveCommand}" CommandParameter="{Binding ElementName=canvas}"/>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="MouseUp">
                         <cmd:EventToCommand Command="{Binding MouseUpCommand}"/>

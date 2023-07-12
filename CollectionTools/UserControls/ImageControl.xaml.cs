@@ -24,16 +24,16 @@ namespace CollectionTools.UserControls
         public ImageControl()
         {
             InitializeComponent();
-            DataContext = ImageModel;
+            //DataContext = ImageModel;
         }
 
-        public static readonly DependencyProperty ImageModelProperty = 
-            DependencyProperty.Register("ImageModel", typeof(ImageViewModel), typeof(ImageControl));
+        //public static readonly DependencyProperty ImageModelProperty = 
+        //    DependencyProperty.Register("ImageModel", typeof(ImageViewModel), typeof(ImageControl));
 
-        public ImageViewModel ImageModel
-        {
-            get { return (ImageViewModel)GetValue(ImageModelProperty); }
-            set { SetValue(ImageModelProperty, value); }
-        }
+        //public ImageViewModel ImageModel
+        //{
+        //    get { return (ImageViewModel)GetValue(ImageModelProperty); }
+        //    set { SetValue(ImageModelProperty, value); }
+        //}
     }
 }
